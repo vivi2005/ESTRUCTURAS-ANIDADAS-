@@ -1,0 +1,63 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+//definicion de la subestructura domicilio
+typedef  struct{
+char Etiqueta[20];
+int numero;
+int cp; //codigo postal
+char barrio[20];
+  
+}domicilio;
+
+//definicion de la estructura empleado
+struct empleado{
+char nombre[20];
+char apellidos [20];
+char area[20];
+float salario;
+domicilio  direccion; // LA DIRECCION ES DE TIPO DOMICILIO SUBCAMPOS.
+
+};
+
+empleado trabajador1, tr2, tr3;
+
+
+int main() {
+
+    printf("nombre del empleado...");
+  scanf(" %20[^\n]",trabajador1.nombre);
+  fflush(stdin);
+
+  printf("apellido del empleado...");
+  scanf(" %20[^\n]",trabajador1.apellidos);
+  fflush(stdin);
+
+    printf("departamento donde labora el empleado...");
+  scanf(" %20[^\n]",trabajador1.area);
+  fflush(stdin);
+  
+  printf("salario de:%s...",trabajador1.nombre);
+  scanf(" %f",&trabajador1.salario);
+   printf("\n direccion: ----------");
+  printf("\tcalle/carrera/avenida");
+  scanf(" %20[^\n]",trabajador1.direccion.Etiqueta);
+  fflush(stdin);
+  printf("\n\tnumero:");
+  scanf("%d",&trabajador1.direccion.numero);
+  printf("\t codigo postal..");
+  scanf("%d",&trabajador1.direccion.cp);
+  printf(" \t barrio..");
+  scanf(" %20[^\n]",trabajador1.direccion.barrio);
+  fflush(stdin);
+  printf("\n-------------------datos digitados");
+  printf("\n%s %s area de trabajo es en %s con %10.2f vive en %s %d %s3000000 %d ",trabajador1.nombre,
+    trabajador1.apellidos,
+    trabajador1.area,
+    trabajador1.salario,
+    trabajador1.direccion.Etiqueta,
+    trabajador1.direccion.numero,
+    trabajador1.direccion.barrio,
+    trabajador1.direccion.cp);
+  }
